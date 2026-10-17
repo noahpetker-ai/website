@@ -1,6 +1,6 @@
 "use strict";
 /* Trage hier NUR die öffentliche Projekt-URL und den "anon public"-Key ein, niemals den service_role-Key. */
-const SB_URL="https://DEIN-PROJEKT.supabase.co",SB_KEY="DEIN-ANON-KEY";
+const SB_URL="https://Projekt-Planer.supabase.co",SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mdHljcHh6aHJncWtwdHN6ZWxwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIyNTI3ODEsImV4cCI6MjEwNzgyODc4MX0.FbgO45PTVAR9OybMXYBsGRbZg7oYsGF7NRnD96swvxQ";
 const $=s=>document.querySelector(s),e=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 if(SB_URL.includes('DEIN-')){$('#v').innerHTML='<h2>Einrichtung fehlt</h2><p>Trage in app.js die Supabase-URL und den anon-Key ein.</p>';throw new Error('Konfiguration fehlt')}
 const sb=supabase.createClient(SB_URL,SB_KEY);
