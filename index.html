@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'unsafe-inline'; connect-src https://*.supabase.co wss://*.supabase.co; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><title>Projektwerkstatt</title>
+<!-- Der Fuchs hat drei Leben. -->
+<style>
+:root{--bg:#eef1f4;--p:#fff;--ink:#1f2a44;--soft:#55627a;--line:#c9d2de;--slate:#3b5b7a;--gold:#d9a21b;--sage:#7fa08c;--bad:#b4533c}
+@media(prefers-color-scheme:dark){:root{--bg:#141b2b;--p:#1d2740;--ink:#e6ebf2;--soft:#9fb0c9;--line:#33415f;--slate:#7fa6cc;--gold:#e8b53a;--sage:#8fb59f;--bad:#e0866e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Avenir Next","Segoe UI",system-ui,sans-serif}
+h1,h2,h3,.c b{font-family:Futura,"Trebuchet MS",sans-serif;margin:0;line-height:1.15}h1{font-size:1.7rem;font-weight:800}h2{font-size:1.3rem;margin:0 0 10px}
+header,main,nav div,footer{max-width:1000px;margin:0 auto;padding-left:16px;padding-right:16px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 14px;padding-top:16px;padding-bottom:8px}
+#sync,.m,small,.c span{color:var(--soft)}#bn{max-width:1000px;margin:0 auto;padding:0 16px;color:var(--soft)}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:2px solid var(--ink);z-index:5}
+nav div{display:flex;gap:4px;padding-top:8px;padding-bottom:0;overflow-x:auto}
+nav button{flex:none;background:none;border:0;border-bottom:4px solid transparent;color:var(--ink);font-weight:700;font-size:1rem;font-family:inherit;padding:8px 12px;cursor:pointer}nav button.on{border-color:var(--gold)}
+main{padding-top:20px;padding-bottom:50px}footer{padding-bottom:40px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:22px 0}
+.c{background:var(--p);border:1px solid var(--line);padding:14px 16px;border-radius:4px 20px 4px 4px}.c b{display:block;font-size:2rem;font-weight:800}
+.fr{background:var(--ink);color:var(--bg);padding:16px;border-radius:4px 4px 24px 4px}
+.fr textarea{width:100%;min-height:80px;background:none;color:inherit;border:2px dashed var(--gold);padding:10px;font:700 1.25rem/1.3 Futura,"Trebuchet MS",sans-serif}
+.strip{display:flex;gap:4px;margin-top:12px}.strip i{flex:1;height:18px;background:rgba(255,255,255,.2)}.strip i.on{background:var(--gold)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.br{display:grid;grid-template-columns:70px 1fr 28px;gap:8px;align-items:center;margin:6px 0}.br div{display:flex;height:18px;background:var(--line)}.br .a{background:var(--sage)}.br .b{background:var(--gold)}
+.f{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.f input[type=text]{flex:1 1 200px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--p);border:1px solid var(--line);padding:8px;border-radius:3px}input:disabled,textarea:disabled{opacity:.75}
+.bt{background:var(--ink);color:var(--bg);border:0;padding:8px 14px;border-radius:3px;font:inherit;font-weight:700;cursor:pointer}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--p);border:1px solid var(--line);border-left:6px solid var(--slate);padding:8px 12px;margin-bottom:6px}
+.row.h{border-left-color:var(--bad)}.row.d{opacity:.7;border-left-color:var(--sage)}.row.d .t{text-decoration:line-through}.row .t{flex:1}
+.row input[type=checkbox],td input[type=checkbox]{width:20px;height:20px;accent-color:var(--sage)}.x{background:none;border:0;color:var(--soft);cursor:pointer;font:inherit}
+.nt{background:var(--p);border:1px dashed var(--line);padding:8px 12px;margin:-2px 0 8px 18px}.nt p{margin:0 0 6px}.nt input{width:100%}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:4px;vertical-align:top;text-align:left}td textarea,td input[type=text],td input:not([type]){width:100%;min-width:130px}
+.tx{width:100%;min-height:260px}a{color:var(--slate);font-weight:700}details{background:var(--p);border:1px solid var(--line);padding:10px 14px;margin-bottom:18px}summary{font-weight:800;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:4px;display:none;z-index:9}
+#fox{background:none;border:0;font-size:1.3rem;cursor:pointer;filter:grayscale(.6)}
+dialog{max-width:520px;width:calc(100% - 32px);background:var(--ink);color:var(--bg);border:3px solid var(--gold);padding:20px}dialog::backdrop{background:rgba(10,14,24,.8)}
+dialog h3{color:var(--gold)}dialog input{width:100%;margin:6px 0;background:transparent;color:inherit;border:2px solid var(--gold);font:1.05rem monospace}
+dialog button{background:var(--gold);color:#1f2a44;border:0;padding:8px 14px;font-weight:700;cursor:pointer;margin-top:6px}dialog code{background:rgba(255,255,255,.15);padding:2px 6px}
+</style></head><body>
+<header><h1>Projektwerkstatt</h1><span id="sync"></span><span id="who"></span></header>
+<div id="bn"></div><nav><div id="tabs"></div></nav><main id="v"></main>
+<footer>Gebaut von Pyfox <button id="fox" aria-label="Fuchs">🦊</button></footer>
+<div id="toast" role="status"></div><dialog id="room"><div id="rb"></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="app.js"></script></body></html>
